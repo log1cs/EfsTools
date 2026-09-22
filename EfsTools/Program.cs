@@ -85,7 +85,7 @@ namespace EfsTools
             }
             catch (Exception ex)
             {
-                logger?.LogError(Strings.CriticalErrorFormat, ex.Message);
+                logger?.LogError(Strings.CriticalErrorFormat, ex.ToString());
             }
         }
     }

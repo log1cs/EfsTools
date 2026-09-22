@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -33,7 +33,7 @@ namespace EfsTools.Utils
         {
             return path.LastOrDefault() == '/' || path.LastOrDefault() == '\\'
                 ? path
-                : $"{path}\\";
+                : $"{path}{Path.DirectorySeparatorChar}";
         }
 
         public static FileInfo ParsePath(string path)

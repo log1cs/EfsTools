@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -255,8 +255,8 @@ namespace EfsTools.Mbn
 
         private static void SaveToFile(string fileName, byte[] content, string outputDirectory)
         {
-            var filePath = fileName.Replace("/", "\\");
-            var path = filePath.StartsWith("\\") ? $"{outputDirectory}{filePath}" : $"{outputDirectory}\\{filePath}";
+            var normalizedFileName = fileName.TrimStart('/', '\\');
+            var path = Path.Combine(outputDirectory, normalizedFileName);
             var dir = Path.GetDirectoryName(path);
             if (dir != null)
             {

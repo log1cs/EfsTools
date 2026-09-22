@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using EfsTools.Utils;
 using RJCP.IO.Ports;
 
@@ -34,7 +34,14 @@ namespace EfsTools.Qualcomm
 
         public void Open()
         {
-            _port.Open();
+            try
+            {
+                _port.Open();
+            }
+            catch
+            {
+                _port.OpenDirect();
+            }
         }
 
         public void Close()
